@@ -5,8 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private const string HorizontalAxis = "Horizontal";
-    
+
     float moveSpeed = 5f;
+
+    Rigidbody2D rigidBody;
+
+    void Start()
+    {
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
+        rigidBody.freezeRotation = true;
+    }
 
     void Update()
     {
