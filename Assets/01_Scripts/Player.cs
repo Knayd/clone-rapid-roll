@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    private const string HorizontalAxis = "Horizontal";
+    
     float moveSpeed = 5f;
 
     void Update()
@@ -15,10 +16,9 @@ public class Player : MonoBehaviour
     private void Move()
     {
 
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        var deltaX = Input.GetAxis(HorizontalAxis) * Time.deltaTime * moveSpeed;
         var newXPos = transform.position.x + deltaX;
         transform.position = new Vector2(newXPos, transform.position.y);
-
     }
 
 }
