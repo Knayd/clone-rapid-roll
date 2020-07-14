@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Constants
     private const string HorizontalAxis = "Horizontal";
 
-    float moveSpeed = 5f;
-
+    private float moveSpeed = 7f;
     Rigidbody2D rigidBody;
 
     void Start()
     {
-        rigidBody = gameObject.GetComponent<Rigidbody2D>();
-        rigidBody.freezeRotation = true;
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
 
     private void Move()
     {
-
-        var deltaX = Input.GetAxis(HorizontalAxis) * Time.deltaTime * moveSpeed;
-        var newXPos = transform.position.x + deltaX;
-        transform.position = new Vector2(newXPos, transform.position.y);
+        var direction = Input.GetAxis(HorizontalAxis);
+        var distanceToMove = direction * moveSpeed;
+        rigidBody.velocity = new Vector2(distanceToMove, rigidBody.velocity.y);
     }
-
 }
