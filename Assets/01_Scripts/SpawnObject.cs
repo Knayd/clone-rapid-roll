@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] private GameObject Platform;
+    [SerializeField] private GameObject[] Platform;
     [SerializeField] private float TimeBetweenSpawns;
-   
+
+    private int randomPrefab;
+
     Vector2 SpawnerPosition;
     void Start()
     {
@@ -22,8 +24,9 @@ public class SpawnObject : MonoBehaviour
     private IEnumerator Spawning()
     {
         while (true) {
-            
-            GameObject A = (GameObject)Instantiate(Platform);
+
+            randomPrefab = Random.Range(0, 2);
+            GameObject A = (GameObject)Instantiate(Platform[randomPrefab]);
             A.transform.parent = transform;
             A.transform.position = SpawnerPosition;
             TimeBetweenSpawns = Random.Range(1, 10);
