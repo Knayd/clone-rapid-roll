@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject levelCanvas;
     [SerializeField] GameObject highScoreCanvas;
 
-    //public int currentCanvas;
+    
 
     public int getLocalSceneIndex;
 
