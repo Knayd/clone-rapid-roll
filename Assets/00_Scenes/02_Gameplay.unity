@@ -536,7 +536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefabs:
   - {fileID: 7869761043384669765, guid: 4136e29878303c847b6a3c65516755da, type: 3}
-  TimeBetweenSpawns: 0
+  TimeBetweenSpawns: 2
+  arrayCounter: 0
 --- !u!212 &571198104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -595,7 +596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571198102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 2.48, z: -5.443083}
+  m_LocalPosition: {x: 1.17, y: -3.32, z: -5.443083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1165,7 +1166,7 @@ PrefabInstance:
     - target: {fileID: 1537049716011864596, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.6235638
+      value: -4.18
       objectReference: {fileID: 0}
     - target: {fileID: 1537049716011864596, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
@@ -1214,6 +1215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1537049716011864597, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
+      propertyPath: Prefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537049716011864597, guid: a5907fdcf695f064ca03b9a8db7c69bc,
+        type: 3}
       propertyPath: Platform.Array.data[0]
       value: 
       objectReference: {fileID: 2572747319729607981, guid: f4ead5b6d289088a29272f09651d6583,
@@ -1221,6 +1227,18 @@ PrefabInstance:
     - target: {fileID: 1537049716011864597, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
       propertyPath: Platform.Array.data[1]
+      value: 
+      objectReference: {fileID: 8862682600339263598, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
+        type: 3}
+    - target: {fileID: 1537049716011864597, guid: a5907fdcf695f064ca03b9a8db7c69bc,
+        type: 3}
+      propertyPath: Prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2572747319729607981, guid: f4ead5b6d289088a29272f09651d6583,
+        type: 3}
+    - target: {fileID: 1537049716011864597, guid: a5907fdcf695f064ca03b9a8db7c69bc,
+        type: 3}
+      propertyPath: Prefabs.Array.data[1]
       value: 
       objectReference: {fileID: 8862682600339263598, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
         type: 3}

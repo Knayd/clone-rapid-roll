@@ -6,13 +6,14 @@ public class SpawnObject : MonoBehaviour
 {
     [SerializeField] private GameObject[] Prefabs;
     [SerializeField] private float TimeBetweenSpawns;
+    [SerializeField] int arrayCounter;
 
     private int randomPrefab;
 
     Vector2 SpawnerPosition;
     void Start()
     {
-        
+        arrayCounter = Prefabs.Length;
         SpawnerPosition = new Vector2(transform.position.x, transform.position.y);
         
         
@@ -25,7 +26,7 @@ public class SpawnObject : MonoBehaviour
     {
         while (true) {
 
-            randomPrefab = Random.Range(0, 2);
+            randomPrefab = Random.Range(0, arrayCounter);
             GameObject A = (GameObject)Instantiate(Prefabs[randomPrefab]);
             A.transform.parent = transform;
             A.transform.position = SpawnerPosition;
