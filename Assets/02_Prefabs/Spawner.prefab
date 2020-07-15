@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce46c95451c1563449b549494e416087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Platform: {fileID: 2152460169710119974, guid: f6842f703e08d6f4887399cdd08b3945,
-    type: 3}
+  Platform:
+  - {fileID: 0}
+  - {fileID: 0}
   TimeBetweenSpawns: 1
 --- !u!212 &1537049716011864683
 SpriteRenderer:
