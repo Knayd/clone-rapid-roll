@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] private GameObject[] Platform;
+    [SerializeField] private GameObject[] Prefabs;
     [SerializeField] private float TimeBetweenSpawns;
 
     private int randomPrefab;
@@ -26,7 +26,7 @@ public class SpawnObject : MonoBehaviour
         while (true) {
 
             randomPrefab = Random.Range(0, 2);
-            GameObject A = (GameObject)Instantiate(Platform[randomPrefab]);
+            GameObject A = (GameObject)Instantiate(Prefabs[randomPrefab]);
             A.transform.parent = transform;
             A.transform.position = SpawnerPosition;
             TimeBetweenSpawns = Random.Range(1, 10);
