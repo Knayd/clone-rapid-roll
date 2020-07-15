@@ -18,6 +18,18 @@ public class SceneLoader : MonoBehaviour
     
     }
 
+    public void LoadLevelSelect()
+    {
+       
+
+    }
+
+    public void LoadHightscores()
+    {
+        
+
+    }
+
     public void QuitGame()
     {
         Application.Quit();
