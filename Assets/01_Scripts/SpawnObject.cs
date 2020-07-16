@@ -27,9 +27,9 @@ public class SpawnObject : MonoBehaviour
         while (true) {
 
             randomPrefab = Random.Range(0, arrayCounter);
-            GameObject getTemporalPrefabs = (GameObject)Instantiate(Prefabs[randomPrefab]); //Store in this var the instantiated in game prefabs
-            getTemporalPrefabs.transform.parent = transform;
-            getTemporalPrefabs.transform.position = SpawnerPosition;
+            GameObject storeTemporalPrefabs = (GameObject)Instantiate(Prefabs[randomPrefab]); //Store in this var the instantiated in game prefabs
+            storeTemporalPrefabs.transform.parent = transform;
+            storeTemporalPrefabs.transform.position = SpawnerPosition;
             TimeBetweenSpawns = Random.Range(1, 10);
             yield return new WaitForSeconds(TimeBetweenSpawns);
        
