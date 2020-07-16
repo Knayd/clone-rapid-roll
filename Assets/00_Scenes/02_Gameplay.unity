@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 2430230212239491956, guid: f4ead5b6d289088a29272f09651d6583,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2430230212239491956, guid: f4ead5b6d289088a29272f09651d6583,
         type: 3}
@@ -914,7 +914,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &621264388
 GameObject:
@@ -1118,7 +1118,7 @@ PrefabInstance:
     - target: {fileID: 2906825434423784152, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2906825434423784152, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
         type: 3}
@@ -1140,6 +1140,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2906825434423784155, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
+        type: 3}
+      propertyPath: pauseMenuCanvas
+      value: 
+      objectReference: {fileID: 1414814883}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf8a0c5d63eeda46a1afa3daba82cf6, type: 3}
 --- !u!1 &724445373
@@ -1528,7 +1533,7 @@ RectTransform:
   - {fileID: 270741555}
   - {fileID: 1067582015}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1703,8 +1708,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadNextScene
+      - m_Target: {fileID: 881152602}
+        m_MethodName: QuitPauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1889,7 +1894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067582014
 GameObject:
@@ -2020,7 +2025,7 @@ PrefabInstance:
     - target: {fileID: 4616323395967083805, guid: 369556e8cd70104eb837b02f16f5f7b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4616323395967083805, guid: 369556e8cd70104eb837b02f16f5f7b7,
         type: 3}
@@ -2057,7 +2062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1414814884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,8 +2386,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ActivateLevelSelect
+      - m_Target: {fileID: 881152602}
+        m_MethodName: LoadPreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2474,7 +2479,7 @@ PrefabInstance:
     - target: {fileID: 1537049716011864596, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1537049716011864596, guid: a5907fdcf695f064ca03b9a8db7c69bc,
         type: 3}
@@ -2680,7 +2685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663450062
 GameObject:
@@ -2763,7 +2768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663450065
 MonoBehaviour:
@@ -2882,7 +2887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8862682600909606268
 PrefabInstance:
@@ -2929,7 +2934,7 @@ PrefabInstance:
     - target: {fileID: 8862682600339263594, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8862682600339263594, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
         type: 3}
