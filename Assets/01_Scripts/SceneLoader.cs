@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Update()
     {
-        enterPauseMenu();
+        EnterPauseMenu();
     }
 
 
@@ -69,7 +69,7 @@ public class SceneLoader : MonoBehaviour
 
     // @ Pause Menu ------------------------------------------
 
-    public void enterPauseMenu()
+    public void EnterPauseMenu()
     {
         if (Input.GetKey(KeyCode.Escape) && pauseMenuCanvas.gameObject.activeInHierarchy == false)
         {
