@@ -77,8 +77,7 @@ public class SceneLoader : MonoBehaviour
             pauseMenuCanvas.SetActive(true);
             
         }
-        /* else if (Input.GetKey(KeyCode.Escape) && pauseMenuCanvas.gameObject.activeInHierarchy == true)
-            pauseMenuCanvas.SetActive(false); */
+        
     }
 
     public void QuitPauseMenu()

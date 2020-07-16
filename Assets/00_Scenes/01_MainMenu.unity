@@ -2561,7 +2561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7803922, g: 0.94117653, b: 0.8470589, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5017,7 +5017,7 @@ PrefabInstance:
     - target: {fileID: 2906825434423784154, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
         type: 3}
       propertyPath: m_Name
-      value: GameManager
+      value: MenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 2906825434423784155, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
         type: 3}
