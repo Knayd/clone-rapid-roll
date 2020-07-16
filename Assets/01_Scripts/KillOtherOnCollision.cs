@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class KillOtherOnCollision : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D other)
     {
-        
-        gameObject.SetActive(false);
+        other.gameObject.SetActive(false);
     }
 }
