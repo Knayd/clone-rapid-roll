@@ -8,6 +8,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject mainMenuCanvas;
     [SerializeField] GameObject levelCanvas;
     [SerializeField] GameObject highScoreCanvas;
+    [SerializeField] GameObject pauseMenuCanvas;
 
     
 
@@ -18,11 +19,27 @@ public class SceneLoader : MonoBehaviour
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
+
+    private void Update()
+    {
+        EnterPauseMenu();
+    }
+
+
+
+    public void LoadPreviousScene()
+    {
+        SceneManager.LoadScene(getLocalSceneIndex - 1);
+
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(getLocalSceneIndex + 1);
 
     }
+
+    // @ Main Menu ---------------------------------
 
     public void ActivateLevelSelect()
     {
@@ -47,6 +64,25 @@ public class SceneLoader : MonoBehaviour
             highScoreCanvas.SetActive(false);
             mainMenuCanvas.SetActive(true);
         }
+    }
+
+
+    // @ Pause Menu ------------------------------------------
+
+    public void EnterPauseMenu()
+    {
+        if (Input.GetKey(KeyCode.Escape) && pauseMenuCanvas.gameObject.activeInHierarchy == false)
+        {
+
+            pauseMenuCanvas.SetActive(true);
+            
+        }
+        
+    }
+
+    public void QuitPauseMenu()
+    {
+        pauseMenuCanvas.SetActive(false);
     }
 
     public void QuitGame()
