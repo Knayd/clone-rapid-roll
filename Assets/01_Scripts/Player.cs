@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Constants
-    private const string HorizontalAxis = "Horizontal";
-
     private float moveSpeed = 7f;
     Rigidbody2D rigidBody;
 
@@ -22,8 +19,22 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        var direction = Input.GetAxis(HorizontalAxis);
+        var direction = Input.GetAxis(Constants.HorizontalAxis);
         var distanceToMove = direction * moveSpeed;
         rigidBody.velocity = new Vector2(distanceToMove, rigidBody.velocity.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Colletc(other.gameObject);
+    }
+
+    private void Colletc(GameObject objectToCollect)
+    {
+        if (objectToCollect.CompareTag(Constants.TagLife))
+        {
+            objectToCollect.SetActive(false);
+            //TODO: Add code for one-up here.
+        }
     }
 }
