@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float moveSpeed = 7f;
-    Rigidbody2D rigidBody;
-    GameInfo gameInfo;
+    private Rigidbody2D rigidBody;
+    private GameInfo gameInfo;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        CheckPlayerStatus();
+        CheckPlayerState();
     }
 
     private void Move()
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         rigidBody.velocity = new Vector2(distanceToMove, rigidBody.velocity.y);
     }
 
-    private void CheckPlayerStatus()
+    private void CheckPlayerState()
     {
         if (IsPlayerFalling())
         {

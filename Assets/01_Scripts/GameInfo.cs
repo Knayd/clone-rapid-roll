@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
-    [SerializeField] int score = 0;
+    [SerializeField] private int score = 0;
 
     void Awake()
     {
