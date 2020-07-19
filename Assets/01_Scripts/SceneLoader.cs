@@ -9,13 +9,15 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject levelCanvas;
     [SerializeField] GameObject highScoreCanvas;
     [SerializeField] GameObject pauseMenuCanvas;
+    [SerializeField] GameObject GameOverCanvas;
+    private LevelManager levelManager;
 
-    
 
     public int getLocalSceneIndex;
 
     void Start()
     {
+        levelManager = FindObjectOfType<LevelManager>();
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -23,6 +25,7 @@ public class SceneLoader : MonoBehaviour
     private void Update()
     {
         EnterPauseMenu();
+        GameOverScreen();
     }
 
 
@@ -79,6 +82,22 @@ public class SceneLoader : MonoBehaviour
         }
         
     }
+
+
+    // @ GameOver Screen ------------------------------------------
+
+    public void GameOverScreen()
+    {
+        var playerLives = levelManager.GetLives();
+        if (playerLives <= 0)
+        {
+
+            GameOverCanvas.SetActive(true);
+
+        }
+
+    }
+
 
     public void QuitPauseMenu()
     {

@@ -15,4 +15,6 @@ public class LevelManager : MonoBehaviour
     public int GetLives() { return lives; }
     public void IncreaseLives() { lives += 1; }
 
+    public void DecreaseLives() { lives -= 1; }
+
 }
