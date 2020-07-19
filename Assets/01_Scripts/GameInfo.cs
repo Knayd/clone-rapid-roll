@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameInfo : MonoBehaviour
 {
     [SerializeField] private int score = 0;
-
+    [SerializeField] private int lives = 3;
     void Awake()
     {
         if (FindObjectsOfType<GameInfo>().Length > 1)
@@ -18,9 +18,14 @@ public class GameInfo : MonoBehaviour
         }
     }
 
-    public void IncreaseScore() { score += 1; }
 
+    public void IncreaseScore() { score += 1; }
     public int GetScore() { return score; }
+
+
+    public int GetLives() { return lives; }
+    public void IncreaseLives() { lives += 1; }
+
 
     public void ResetGameInfo()
     {
