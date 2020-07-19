@@ -10,8 +10,10 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject highScoreCanvas;
     [SerializeField] GameObject pauseMenuCanvas;
     [SerializeField] GameObject GameOverCanvas;
+    [SerializeField] GameObject LevelScoreCanvas;
     private LevelManager levelManager;
 
+    private float timeCountdownBetweenScreens = 3f;
 
     public int getLocalSceneIndex;
 
@@ -93,6 +95,13 @@ public class SceneLoader : MonoBehaviour
         {
 
             GameOverCanvas.SetActive(true);
+            timeCountdownBetweenScreens -= Time.deltaTime;
+            if (timeCountdownBetweenScreens <= 0)
+            {
+                GameOverCanvas.SetActive(false);
+                LevelScoreCanvas.SetActive(true);
+                    
+            }
 
         }
 
