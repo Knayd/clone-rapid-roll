@@ -5,16 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float moveSpeed = 7f;
-    Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
+    private GameInfo gameInfo;
+    private const float DownwardsVelocityStartingPoint = -0.1f;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        gameInfo = FindObjectOfType<GameInfo>();
     }
 
     void FixedUpdate()
     {
         Move();
+        CheckPlayerState();
     }
 
     private void Move()
@@ -23,6 +27,16 @@ public class Player : MonoBehaviour
         var distanceToMove = direction * moveSpeed;
         rigidBody.velocity = new Vector2(distanceToMove, rigidBody.velocity.y);
     }
+
+    private void CheckPlayerState()
+    {
+        if (IsPlayerFalling())
+        {
+            gameInfo.IncreaseScore();
+        }
+    }
+
+    private bool IsPlayerFalling() { return rigidBody.velocity.y < DownwardsVelocityStartingPoint; }
 
     void OnCollisionEnter2D(Collision2D other)
     {
