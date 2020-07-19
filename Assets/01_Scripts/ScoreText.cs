@@ -18,26 +18,12 @@ public class ScoreText : MonoBehaviour
 
     void Update()
     {
-        scoreTextField.text = GetScoreWithZeros(gameInfo.GetScore());
+        scoreTextField.text = GetScoreWithLeadingZeros(gameInfo.GetScore());
     }
 
-    private string GetScoreWithZeros(int score)
+    private string GetScoreWithLeadingZeros(int score)
     {
-        var scoreString = score.ToString();
-        var scoreLength = scoreString.Length;
-
-        if (scoreLength < MaxAmountOfDigits)
-        {
-            var scoreStartIndex = MaxAmountOfDigits - scoreLength;
-
-            var formattedScore = GetPlaceHolderWithZeros();
-            formattedScore = formattedScore.Remove(scoreStartIndex, scoreLength).Insert(scoreStartIndex, scoreString);
-            return formattedScore;
-        }
-        else
-        {
-            return scoreString;
-        }
+        return score.ToString(GetPlaceHolderWithZeros());
     }
 
     private string GetPlaceHolderWithZeros() { return new string(LeftZeroChar, MaxAmountOfDigits); }
