@@ -8,17 +8,17 @@ public class ScoreText : MonoBehaviour
     private const int MaxAmountOfDigits = 10;
     private const char LeftZeroChar = '0';
 
-    private GameInfo gameInfo;
+    private LevelManager levelManager;
     [SerializeField] private TextMeshProUGUI scoreTextField;
 
     void Start()
     {
-        gameInfo = FindObjectOfType<GameInfo>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     void Update()
     {
-        scoreTextField.text = GetScoreWithLeadingZeros(gameInfo.GetScore());
+        scoreTextField.text = GetScoreWithLeadingZeros(levelManager.GetScore());
     }
 
     private string GetScoreWithLeadingZeros(int score)

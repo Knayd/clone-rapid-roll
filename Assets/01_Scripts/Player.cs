@@ -6,13 +6,13 @@ public class Player : MonoBehaviour
 {
     private float moveSpeed = 7f;
     private Rigidbody2D rigidBody;
-    private GameInfo gameInfo;
+    private LevelManager gameInfo;
     private const float DownwardsVelocityStartingPoint = -0.1f;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        gameInfo = FindObjectOfType<GameInfo>();
+        gameInfo = FindObjectOfType<LevelManager>();
     }
 
     void FixedUpdate()
