@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private float moveSpeed = 7f;
     private Rigidbody2D rigidBody;
     private GameInfo gameInfo;
+    private const float DownwardsVelocityStartingPoint = -0.1f;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private bool IsPlayerFalling() { return rigidBody.velocity.y < 0; }
+    private bool IsPlayerFalling() { return rigidBody.velocity.y < DownwardsVelocityStartingPoint; }
 
     void OnCollisionEnter2D(Collision2D other)
     {
