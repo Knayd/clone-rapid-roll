@@ -6,13 +6,13 @@ public class Player : MonoBehaviour
 {
     private float moveSpeed = 7f;
     private Rigidbody2D rigidBody;
-    private LevelManager gameInfo;
+    private LevelManager levelManager;
     private const float DownwardsVelocityStartingPoint = -0.1f;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        gameInfo = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     void FixedUpdate()
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     {
         if (IsPlayerFalling())
         {
-            gameInfo.IncreaseScore();
+            levelManager.IncreaseScore();
         }
     }
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         if (objectToCollect.CompareTag(Constants.TagLife))
         {
             objectToCollect.SetActive(false);
-            gameInfo.IncreaseLives();
+            levelManager.IncreaseLives();
         }
     }
 }
