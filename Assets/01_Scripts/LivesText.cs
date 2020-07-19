@@ -6,6 +6,10 @@ using System;
 
 public class LivesText : MonoBehaviour
 {
+
+    private const int MaxAmountOfCharacters = 2;
+    private const char XCharacter = 'x';
+
     private GameInfo gameInfo;
     [SerializeField] private TextMeshProUGUI LivesTextField;
 
@@ -16,11 +20,18 @@ public class LivesText : MonoBehaviour
 
     void Update()
     {
-        LivesTextField.text = GetLivesAmount(gameInfo.GetLives());
+        LivesTextField.text = XCharacter + GetLivesAmount(gameInfo.GetLives());
     }
 
     private string GetLivesAmount(int lives)
     {
-        return lives.ToString();
+        return lives.ToString(); 
     }
+
+    /**
+    private string GetPlaceholderCharacter()
+    {
+        return new string(XCharacter, MaxAmountOfCharacters);
+    }
+    */
 }
