@@ -5,25 +5,14 @@ using UnityEngine;
 public class GameInfo : MonoBehaviour
 {
     [SerializeField] private int score = 0;
-
-    void Awake()
-    {
-        if (FindObjectsOfType<GameInfo>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    [SerializeField] private int lives = 3;
+  
 
     public void IncreaseScore() { score += 1; }
-
     public int GetScore() { return score; }
 
-    public void ResetGameInfo()
-    {
-        Destroy(gameObject);
-    }
+
+    public int GetLives() { return lives; }
+    public void IncreaseLives() { lives += 1; }
+
 }

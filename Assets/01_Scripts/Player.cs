@@ -40,15 +40,15 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Colletc(other.gameObject);
+        Collect(other.gameObject);
     }
 
-    private void Colletc(GameObject objectToCollect)
+    private void Collect(GameObject objectToCollect)
     {
         if (objectToCollect.CompareTag(Constants.TagLife))
         {
             objectToCollect.SetActive(false);
-            //TODO: Add code for one-up here.
+            gameInfo.IncreaseLives();
         }
     }
 }

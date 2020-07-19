@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  lives: 3
 --- !u!4 &54818551
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -160, y: -44.399994}
+  m_AnchoredPosition: {x: -160, y: -44.399902}
   m_SizeDelta: {x: 281.23267, y: 56.24652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118900656
@@ -514,6 +515,7 @@ GameObject:
   - component: {fileID: 270741555}
   - component: {fileID: 270741557}
   - component: {fileID: 270741556}
+  - component: {fileID: 270741558}
   m_Layer: 5
   m_Name: LivesText
   m_TagString: Untagged
@@ -660,6 +662,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270741554}
   m_CullTransparentMesh: 0
+--- !u!114 &270741558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270741554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baac595e78e0ab446b65507bf023acbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LivesTextField: {fileID: 270741556}
 --- !u!1001 &314589977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1751,7 +1766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77, y: -44.399963}
+  m_AnchoredPosition: {x: 77, y: -44.399902}
   m_SizeDelta: {x: 112.49304, y: 56.24652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884737856
