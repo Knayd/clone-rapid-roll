@@ -10,20 +10,17 @@ public class LivesText : MonoBehaviour
     private const int MaxAmountOfCharacters = 2;
     private const char XCharacter = 'x';
 
-    private GameInfo gameInfo;
+    private LevelManager levelManager;
     [SerializeField] private TextMeshProUGUI LivesTextField;
 
     void Start()
     {
-        gameInfo = FindObjectOfType<GameInfo>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     void Update()
     {
-        LivesTextField.text = XCharacter + gameInfo.GetLives().ToString();
+        LivesTextField.text = XCharacter + levelManager.GetLives().ToString();
     }
-
-  
-
   
 }
