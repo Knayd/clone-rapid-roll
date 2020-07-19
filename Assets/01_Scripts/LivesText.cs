@@ -20,18 +20,10 @@ public class LivesText : MonoBehaviour
 
     void Update()
     {
-        LivesTextField.text = XCharacter + GetLivesAmount(gameInfo.GetLives());
+        LivesTextField.text = XCharacter + gameInfo.GetLives().ToString();
     }
 
-    private string GetLivesAmount(int lives)
-    {
-        return lives.ToString(); 
-    }
+  
 
-    /**
-    private string GetPlaceholderCharacter()
-    {
-        return new string(XCharacter, MaxAmountOfCharacters);
-    }
-    */
+  
 }
