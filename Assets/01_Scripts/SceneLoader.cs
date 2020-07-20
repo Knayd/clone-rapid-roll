@@ -12,13 +12,16 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject GameOverCanvas;
     [SerializeField] GameObject LevelScoreCanvas;
     private LevelManager levelManager;
+    public bool gameIsOver = false;
 
     private float timeCountdownBetweenScreens = 3f;
 
     public int getLocalSceneIndex;
+    
 
     void Start()
     {
+        //gameIsOver = false;
         levelManager = FindObjectOfType<LevelManager>();
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -35,6 +38,12 @@ public class SceneLoader : MonoBehaviour
     public void LoadPreviousScene()
     {
         SceneManager.LoadScene(getLocalSceneIndex - 1);
+
+    }
+
+    public void LoadCurrentScene()
+    {
+        SceneManager.LoadScene(getLocalSceneIndex);
 
     }
 
@@ -90,12 +99,13 @@ public class SceneLoader : MonoBehaviour
 
     public void GameOverScreen()
     {
-        var playerLives = levelManager.GetLives();
-        if (playerLives <= 0)
+        
+        if (gameIsOver)
         {
 
             GameOverCanvas.SetActive(true);
             timeCountdownBetweenScreens -= Time.deltaTime;
+
             if (timeCountdownBetweenScreens <= 0)
             {
                 GameOverCanvas.SetActive(false);
