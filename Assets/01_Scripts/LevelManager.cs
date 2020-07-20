@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
        if(lives <= 0) {
 
             sceneLoader.gameIsOver = true;
-            Debug.Log("game is over");
+            
         }
         
             }
