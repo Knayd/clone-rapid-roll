@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] GameObject GameOverCanvas;
+    [SerializeField] GameObject LevelScoreCanvas;
+
     [SerializeField] private int score = 0;
     [SerializeField] private int lives = 3;
-    
 
-   public SceneLoader sceneLoader;
-    
+    private float timeCountdownBetweenScreens = 3f;
 
+    private SceneLoader sceneLoader;
+   
+    //-------
     public void IncreaseScore() { score += 1; }
     public int GetScore() { return score; }
 
@@ -20,14 +24,7 @@ public class LevelManager : MonoBehaviour
 
     public void DecreaseLives() { lives -= 1; }
 
-    public void GameIsOver() {
-       if(lives <= 0) {
-
-            sceneLoader.gameIsOver = true;
-            
-        }
-        
-            }
+    //-------
 
     public void Start()
     {
@@ -42,4 +39,23 @@ public class LevelManager : MonoBehaviour
         GameIsOver();
     }
 
+    // GameOver Screen ---------------------------------
+
+    public void GameIsOver()
+    {
+        if (lives <= 0)
+        {
+            GameOverCanvas.SetActive(true);
+            timeCountdownBetweenScreens -= Time.deltaTime;
+
+            if (timeCountdownBetweenScreens <= 0)
+            {
+                GameOverCanvas.SetActive(false);
+                LevelScoreCanvas.SetActive(true);
+
+            }
+        }
+    }
 }
+
+
