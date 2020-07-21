@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int score = 0;
     [SerializeField] private int lives = 3;
 
-    private float timeCountdownBetweenScreens = 3f;
+    private float countdownTimeBetweenScreens = 3f;
 
     private SceneLoader sceneLoader;
    
@@ -46,9 +46,9 @@ public class LevelManager : MonoBehaviour
         if (lives <= 0)
         {
             GameOverCanvas.SetActive(true);
-            timeCountdownBetweenScreens -= Time.deltaTime;
+            countdownTimeBetweenScreens -= Time.deltaTime;
 
-            if (timeCountdownBetweenScreens <= 0)
+            if (countdownTimeBetweenScreens <= 0)
             {
                 GameOverCanvas.SetActive(false);
                 LevelScoreCanvas.SetActive(true);

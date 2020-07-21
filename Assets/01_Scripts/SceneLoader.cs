@@ -10,10 +10,6 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject highScoreCanvas;
     [SerializeField] GameObject pauseMenuCanvas;
     
-    private LevelManager levelManager;
-    
-
-    
 
     public int getLocalSceneIndex;
     
@@ -21,7 +17,6 @@ public class SceneLoader : MonoBehaviour
     void Start()
     {
       
-        levelManager = FindObjectOfType<LevelManager>();
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
