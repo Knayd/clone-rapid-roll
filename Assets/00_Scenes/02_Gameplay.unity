@@ -4039,7 +4039,7 @@ GameObject:
   - component: {fileID: 1663450065}
   m_Layer: 10
   m_Name: Ceiling Spikes
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4591,6 +4591,16 @@ PrefabInstance:
       propertyPath: lives
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
+        type: 3}
+      propertyPath: GameOverCanvas
+      value: 
+      objectReference: {fileID: 723475254}
+    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
+        type: 3}
+      propertyPath: LevelScoreCanvas
+      value: 
+      objectReference: {fileID: 1215486104}
     - target: {fileID: 1868906909597631415, guid: 2d2fa1543d1de51419f56c509d455473,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4655,10 +4665,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 42043542}
     m_Modifications:
+    - target: {fileID: 3878655144700850436, guid: 8d22e493f6f8c9809bd14d51cf65f5bc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3878655144700850437, guid: 8d22e493f6f8c9809bd14d51cf65f5bc,
         type: 3}
       propertyPath: m_Name
       value: BottomDespawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878655144700850437, guid: 8d22e493f6f8c9809bd14d51cf65f5bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Spike
       objectReference: {fileID: 0}
     - target: {fileID: 3878655144700850438, guid: 8d22e493f6f8c9809bd14d51cf65f5bc,
         type: 3}
