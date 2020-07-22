@@ -18,13 +18,20 @@ public abstract class BaseObjectSpawner : MonoBehaviour
             {
                 if (!GetObjectToSpawn().activeInHierarchy)
                 {
-                    GetObjectToSpawn().transform.position = objectOnWhichToSpawn.transform.position;
+                    GetObjectToSpawn().transform.position = GetTopPositionOfGameObject(objectOnWhichToSpawn);
                     GetObjectToSpawn().SetActive(true);
                     yield break;
                 }
             }
             yield return new WaitForSeconds(GetTimeBetweenSpawns());
         }
+    }
+
+    private Vector2 GetTopPositionOfGameObject(GameObject gameObject)
+    {
+        var centerToTopScale = gameObject.transform.localScale.y / 2;
+        var top = gameObject.transform.position.y * centerToTopScale;
+        return new Vector2(gameObject.transform.position.x, top);
     }
 
     private GameObject GetObjectOnWichToSpawn()
