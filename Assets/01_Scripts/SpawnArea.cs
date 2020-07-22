@@ -5,7 +5,8 @@ using System;
 
 public class SpawnArea : MonoBehaviour
 {
-    private List<GameObject> objectsInsideArea;
+    private List<GameObject> objectsInsideArea = new List<GameObject>();
+
     public List<GameObject> GetObjectsInsideArea()
     {
         return objectsInsideArea;
