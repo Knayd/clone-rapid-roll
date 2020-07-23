@@ -7,8 +7,8 @@ public class LivesSpawner : ObjectSpawnerOnTopOfPlatform
 
     [SerializeField] SpawnArea spawnArea;
     [SerializeField] GameObject lifeObject;
-    private float maxTimeBetweenSpawns = 1f;
-    private float minTimeBetweenSpawns = 4f;
+    private float maxTimeBetweenSpawns = 4f;
+    private float minTimeBetweenSpawns = 1f;
 
     IEnumerator Start()
     {
