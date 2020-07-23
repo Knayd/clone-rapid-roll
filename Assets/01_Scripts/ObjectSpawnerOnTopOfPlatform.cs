@@ -7,7 +7,14 @@ public abstract class ObjectSpawnerOnTopOfPlatform : MonoBehaviour
     public abstract GameObject GetObjectToSpawn();
     public abstract float GetTimeInSecondsBetweenSpawns();
     public abstract SpawnArea GetObjectSpawnArea();
-    public abstract Vector2 ObjectToSpawnHalfHeight();
+
+    // Default implementation
+    protected virtual Vector2 ObjectToSpawnHalfHeight()
+    {
+        // Using SpriteRenderer since objects are expected to be inactive before spawning.
+        var objectBounds = GetObjectToSpawn().GetComponent<SpriteRenderer>().bounds;
+        return new Vector2(0, objectBounds.extents.y);
+    }
 
     public IEnumerator SpawnObject()
     {

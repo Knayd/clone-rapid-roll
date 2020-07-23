@@ -26,11 +26,4 @@ public class PlayerSpawner : ObjectSpawnerOnTopOfPlatform
     {
         return 1f;
     }
-
-    public override Vector2 ObjectToSpawnHalfHeight()
-    {
-        // Using sprite renderer here due to object starting as inactive
-        var playerBounds = player.GetComponent<SpriteRenderer>().bounds;
-        return new Vector2(0, playerBounds.extents.y);
-    }
 }

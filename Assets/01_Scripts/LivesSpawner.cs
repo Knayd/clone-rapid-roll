@@ -33,10 +33,4 @@ public class LivesSpawner : ObjectSpawnerOnTopOfPlatform
     {
         return Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
     }
-
-    public override Vector2 ObjectToSpawnHalfHeight()
-    {
-        var lifeBounds = lifeObject.GetComponent<SpriteRenderer>().bounds;
-        return new Vector2(0, lifeBounds.extents.y);
-    }
 }
