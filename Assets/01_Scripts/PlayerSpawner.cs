@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpawner : BaseObjectSpawner
+public class PlayerSpawner : ObjectSpawnerOnTopOfPlatform
 {
     [SerializeField] SpawnArea spawnArea;
     [SerializeField] GameObject player;
