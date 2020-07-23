@@ -5,39 +5,39 @@ using UnityEngine;
 public abstract class BaseObjectSpawner : MonoBehaviour
 {
     public abstract GameObject GetObjectToSpawn();
-    public abstract float GetTimeBetweenSpawns();
+    public abstract float GetTimeInSecondsBetweenSpawns();
     public abstract SpawnArea GetObjectSpawnArea();
-    public abstract string GetObjectTagOnWhichToSpawn();
+    public abstract Vector2 ObjectToSpawnHalfHeight();
 
     public IEnumerator SpawnObject()
     {
         while (true)
         {
-            var objectOnWhichToSpawn = GetObjectOnWichToSpawn();
-            if (objectOnWhichToSpawn != null)
+            var platformOnWhichToSpawn = GetPlatformOnWichToSpawn();
+            if (platformOnWhichToSpawn != null)
             {
                 if (!GetObjectToSpawn().activeInHierarchy)
                 {
-                    GetObjectToSpawn().transform.position = GetTopPositionOfGameObject(objectOnWhichToSpawn);
+                    GetObjectToSpawn().transform.position = GetTopPositionOfCollider(platformOnWhichToSpawn) + ObjectToSpawnHalfHeight();
                     GetObjectToSpawn().SetActive(true);
                     yield break;
                 }
             }
-            yield return new WaitForSeconds(GetTimeBetweenSpawns());
+            yield return new WaitForSeconds(GetTimeInSecondsBetweenSpawns());
         }
     }
 
-    private Vector2 GetTopPositionOfGameObject(GameObject gameObject)
-    {
-        var centerToTopScale = gameObject.transform.localScale.y / 2;
-        var top = gameObject.transform.position.y * centerToTopScale;
-        return new Vector2(gameObject.transform.position.x, top);
-    }
-
-    private GameObject GetObjectOnWichToSpawn()
+    private Collider2D GetPlatformOnWichToSpawn()
     {
         return GetObjectSpawnArea()
-                .GetObjectsInsideArea()
-                .Find(objectInArea => objectInArea.CompareTag(GetObjectTagOnWhichToSpawn()));
+                .GetCollidersInsideArea()
+                .Find(colliderInArea => colliderInArea.gameObject.CompareTag(Constants.TagPlatform));
+    }
+
+    private Vector2 GetTopPositionOfCollider(Collider2D collider)
+    {
+        var top = collider.bounds.max.y;
+        var center = collider.bounds.center.x;
+        return new Vector2(center, top);
     }
 }
