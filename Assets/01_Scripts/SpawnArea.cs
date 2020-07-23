@@ -5,23 +5,23 @@ using System;
 
 public class SpawnArea : MonoBehaviour
 {
-    private List<GameObject> objectsInsideArea = new List<GameObject>();
+    private List<Collider2D> collidersInsideArea = new List<Collider2D>();
 
-    public List<GameObject> GetObjectsInsideArea()
+    public List<Collider2D> GetCollidersInsideArea()
     {
-        return objectsInsideArea;
+        return collidersInsideArea;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!objectsInsideArea.Contains(other.gameObject))
+        if (!collidersInsideArea.Contains(other))
         {
-            objectsInsideArea.Add(other.gameObject);
+            collidersInsideArea.Add(other);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        objectsInsideArea.Remove(other.gameObject);
+        collidersInsideArea.Remove(other);
     }
 }
