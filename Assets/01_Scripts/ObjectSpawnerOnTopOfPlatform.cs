@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseObjectSpawner : MonoBehaviour
+public abstract class ObjectSpawnerOnTopOfPlatform : MonoBehaviour
 {
     public abstract GameObject GetObjectToSpawn();
     public abstract float GetTimeInSecondsBetweenSpawns();
