@@ -4601,6 +4601,16 @@ PrefabInstance:
       propertyPath: LevelScoreCanvas
       value: 
       objectReference: {fileID: 1215486104}
+    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
+        type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 723475254}
+    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
+        type: 3}
+      propertyPath: levelScoreCanvas
+      value: 
+      objectReference: {fileID: 1215486104}
     - target: {fileID: 1868906909597631415, guid: 2d2fa1543d1de51419f56c509d455473,
         type: 3}
       propertyPath: m_LocalPosition.x
