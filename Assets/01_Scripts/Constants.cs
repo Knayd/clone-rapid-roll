@@ -9,5 +9,6 @@ public class Constants
 
     //Tags
     public const string TagLife = "Life";
+    public const string TagSpike = "Spike";
     public const string TagPlatform = "Platform";
 }

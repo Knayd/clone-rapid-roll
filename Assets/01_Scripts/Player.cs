@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         Collect(other.gameObject);
+        Hurt(other.gameObject);
     }
 
     private void Collect(GameObject objectToCollect)
@@ -51,4 +52,13 @@ public class Player : MonoBehaviour
             levelManager.IncreaseLives();
         }
     }
+
+    private void Hurt(GameObject spikes)
+    {
+        if (spikes.CompareTag(Constants.TagSpike))
+        {
+            levelManager.DecreaseLives();
+        }
+    }
+
 }
