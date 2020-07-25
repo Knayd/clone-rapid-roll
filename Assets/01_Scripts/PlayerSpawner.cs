@@ -7,11 +7,6 @@ public class PlayerSpawner : ObjectSpawnerOnTopOfPlatform
     [SerializeField] SpawnArea spawnArea;
     [SerializeField] GameObject player;
 
-    void Start()
-    {
-        StartCoroutine(SpawnObject());
-    }
-
     public override SpawnArea GetObjectSpawnArea()
     {
         return spawnArea;
