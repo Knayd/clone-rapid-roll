@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Poolable Object")]
-public class PoolableObject : ScriptableObject
+[CreateAssetMenu(menuName = "Poolable Object Config")]
+public class PoolableObjectConfig : ScriptableObject
 {
     [SerializeField] private GameObject objectToPool;
     [SerializeField] private int amountToPool;
