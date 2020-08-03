@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256d314911bb417999b911b213178824, type: 3}
   m_Name: NormalPlatformConfig
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 0}
-  amountToPool: 0
+  objectToPool: {fileID: 2572747319729607981, guid: f4ead5b6d289088a29272f09651d6583,
+    type: 3}
+  amountToPool: 15

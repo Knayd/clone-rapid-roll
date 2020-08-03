@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256d314911bb417999b911b213178824, type: 3}
   m_Name: SpikePlatformConfig
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 0}
-  amountToPool: 0
+  objectToPool: {fileID: 8862682600339263598, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
+    type: 3}
+  amountToPool: 10
