@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformSpawner : MonoBehaviour
+public class PlatformSpawner : ObjectSpawner
 {
     [SerializeField] SpawnArea platformSpawnArea;
     private float minSpawnTime = 2f;
@@ -10,30 +10,29 @@ public class PlatformSpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Spawn());
+        StartCoroutine(SpawnPlatform());
     }
 
-    private IEnumerator Spawn()
+    private IEnumerator SpawnPlatform()
     {
         while (true)
         {
-            string platformTag;
-
-            // 70% chance of getting a normal platform
-            platformTag = (Random.value <= 0.7) ? Constants.TagPlatform : Constants.TagSpike;
-
-            GameObject platform = ObjectPooler.SharedInstance.GetPooledObject(platformTag);
-
-            if (platform != null)
-            {
-                platform.transform.position = GetPositionToSpawn();
-                platform.SetActive(true);
-            }
+            Spawn();
             yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
         }
     }
 
-    private Vector2 GetPositionToSpawn()
+    public override GameObject GetObjectToSpawn()
+    {
+        string platformTag;
+
+        // 70% chance of getting a normal platform
+        platformTag = (Random.value <= 0.7) ? Constants.TagPlatform : Constants.TagSpike;
+
+        return ObjectPooler.SharedInstance.GetPooledObject(platformTag);
+    }
+
+    public override Vector2 GetPositionToSpawnOn()
     {
         var minAreaBounds = platformSpawnArea.GetAreaBounds().min;
         var maxAreaBounds = platformSpawnArea.GetAreaBounds().max;
