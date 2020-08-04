@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
         if (spikes.CompareTag(Constants.TagSpike))
         {
             levelManager.DecreaseLives();
+            gameObject.SetActive(false);
         }
     }
 
