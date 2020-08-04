@@ -12,7 +12,8 @@ public class RampUpMovement : MonoBehaviour
         startPosition = transform.position;
         speed = .5f;
     }
-    void FixedUpdate()
+
+    void Update()
     {
         Move();
     }
