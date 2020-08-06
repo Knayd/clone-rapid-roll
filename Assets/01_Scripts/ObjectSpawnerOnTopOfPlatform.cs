@@ -21,12 +21,13 @@ public abstract class ObjectSpawnerOnTopOfPlatform : MonoBehaviour
         while (true)
         {
             var platformOnWhichToSpawn = GetPlatformOnWichToSpawn();
-            if (platformOnWhichToSpawn != null)
+            var objectToSpawn = GetObjectToSpawn();
+            if (platformOnWhichToSpawn != null && objectToSpawn != null)
             {
-                if (!GetObjectToSpawn().activeInHierarchy)
+                if (!objectToSpawn.activeInHierarchy)
                 {
-                    GetObjectToSpawn().transform.position = GetTopPositionOfCollider(platformOnWhichToSpawn) + ObjectToSpawnHalfHeight();
-                    GetObjectToSpawn().SetActive(true);
+                    objectToSpawn.transform.position = GetTopPositionOfCollider(platformOnWhichToSpawn) + ObjectToSpawnHalfHeight();
+                    objectToSpawn.SetActive(true);
                     yield break;
                 }
             }
