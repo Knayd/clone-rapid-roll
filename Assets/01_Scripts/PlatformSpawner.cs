@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlatformSpawner : ObjectSpawner
 {
-    [SerializeField] SpawnArea platformSpawnArea;
+    [SerializeField] 
+    private SpawnArea platformSpawnArea;
     private float minSpawnTime = 2f;
     private float maxSpawnTime = 4f;
 
