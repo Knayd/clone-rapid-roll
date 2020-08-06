@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerSpawner : ObjectSpawnerOnTopOfPlatform
 {
-    [SerializeField] SpawnArea spawnArea;
-    [SerializeField] GameObject player;
+    [SerializeField] 
+    private SpawnArea spawnArea;
 
     public override SpawnArea GetObjectSpawnArea()
     {
@@ -14,7 +14,7 @@ public class PlayerSpawner : ObjectSpawnerOnTopOfPlatform
 
     public override GameObject GetObjectToSpawn()
     {
-        return player;
+        return ObjectPooler.SharedInstance.GetPooledObject(Constants.TagPlayer);
     }
 
     public override float GetTimeInSecondsBetweenSpawns()

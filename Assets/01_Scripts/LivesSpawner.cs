@@ -6,7 +6,6 @@ public class LivesSpawner : ObjectSpawnerOnTopOfPlatform
 {
 
     [SerializeField] SpawnArea spawnArea;
-    [SerializeField] GameObject lifeObject;
     private float maxTimeBetweenSpawns = 4f;
     private float minTimeBetweenSpawns = 1f;
 
@@ -26,7 +25,7 @@ public class LivesSpawner : ObjectSpawnerOnTopOfPlatform
 
     public override GameObject GetObjectToSpawn()
     {
-        return lifeObject;
+        return ObjectPooler.SharedInstance.GetPooledObject(Constants.TagLife);
     }
 
     public override float GetTimeInSecondsBetweenSpawns()

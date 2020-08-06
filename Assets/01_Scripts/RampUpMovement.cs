@@ -7,33 +7,29 @@ public class RampUpMovement : MonoBehaviour
     [SerializeField] float speed;
     Vector2 startPosition;
 
-    
     void Start()
     {
         startPosition = transform.position;
         speed = .5f;
     }
-    void FixedUpdate()
-    {
 
-        //transform.position = new Vector2(startPosition.x, startPosition.y * movSpeed); 
-        //transform.position = new Vector2(startPosition.x + Mathf.Sin(Time.time * speed), transform.position.y);
+    void Update()
+    {
         Move();
         Destroy();
     }
 
     private void Move()
     {
-
         transform.position = new Vector2(startPosition.x, transform.position.y + Time.deltaTime * speed);
     }
 
     private void Destroy()
     {
-        Vector2 ScreenBoundarie = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
-        if (transform.position.y >= ScreenBoundarie.y)
+        Vector2 screenBoundary = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+        if (transform.position.y >= screenBoundary.y)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

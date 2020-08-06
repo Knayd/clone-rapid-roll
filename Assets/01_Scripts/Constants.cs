@@ -11,4 +11,5 @@ public class Constants
     public const string TagLife = "Life";
     public const string TagSpike = "Spike";
     public const string TagPlatform = "Platform";
+    public const string TagPlayer = "Player";
 }
