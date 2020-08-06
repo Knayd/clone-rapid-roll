@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolableObjectConfigs:
+  - {fileID: 11400000, guid: 1c65b2e37878c00ac8c9ce44ba500e41, type: 2}
+  - {fileID: 11400000, guid: 5573124ad32d31a5682703ef03f373f4, type: 2}
   - {fileID: 11400000, guid: 047a63804a620fb37888d7c0a830e4fd, type: 2}
   - {fileID: 11400000, guid: 58745c23b8ed39dcfb9001fee8691a29, type: 2}
