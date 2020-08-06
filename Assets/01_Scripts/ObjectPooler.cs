@@ -28,13 +28,8 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetPooledObject(string tag)
     {
-        foreach (var pooledObject in pooledObjects)
-        {
-            if (!pooledObject.activeInHierarchy && pooledObject.CompareTag(tag))
-            {
-                return pooledObject;
-            }
-        }
-        return null;
+        return pooledObjects.Find(pooledObject =>
+                                    !pooledObject.activeInHierarchy &&
+                                    pooledObject.CompareTag(tag));
     }
 }
