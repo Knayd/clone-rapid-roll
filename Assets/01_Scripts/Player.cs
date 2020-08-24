@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKillable
 {
     private float moveSpeed = 7f;
     private Rigidbody2D rigidBody;
@@ -38,27 +38,9 @@ public class Player : MonoBehaviour
 
     private bool IsPlayerFalling() { return rigidBody.velocity.y < DownwardsVelocityStartingPoint; }
 
-    void OnCollisionEnter2D(Collision2D other)
+    public void Kill()
     {
-        Collect(other.gameObject);
-        Hurt(other.gameObject);
+        gameObject.SetActive(false);
+        levelManager.DecreaseLives();
     }
-
-    private void Collect(GameObject objectToCollect)
-    {
-        if (objectToCollect.CompareTag(Constants.TagLife))
-        {
-            objectToCollect.SetActive(false);
-            levelManager.IncreaseLives();
-        }
-    }
-
-    private void Hurt(GameObject spikes)
-    {
-        if (spikes.CompareTag(Constants.TagSpike))
-        {
-            levelManager.DecreaseLives();
-        }
-    }
-
 }

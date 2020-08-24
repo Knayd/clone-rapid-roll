@@ -1,0 +1,4 @@
+interface IDespawnable
+{
+    void Despawn();
+}
