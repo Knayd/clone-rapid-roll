@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-interface ISaveable
+﻿interface ISaveable
 {
     object CaptureState();
     void RestoreState(object state);

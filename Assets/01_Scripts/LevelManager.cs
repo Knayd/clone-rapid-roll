@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, ISaveable
 {
     [SerializeField] PlayerSpawner playerSpawner;
 
@@ -53,6 +53,32 @@ public class LevelManager : MonoBehaviour
         {
             yield return playerSpawner.SpawnObject();
         }
+    }
+
+    // Save System ---------------------------------
+
+    public object CaptureState()
+    {
+        return new SaveData
+        {
+            score = score,
+            lives = lives
+        };
+    }
+
+    public void RestoreState(object state)
+    {
+        var saveData = (SaveData)state;
+
+        score = saveData.score;
+        lives = saveData.lives;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public int score;
+        public int lives;
     }
 }
 
