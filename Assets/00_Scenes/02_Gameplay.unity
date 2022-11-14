@@ -664,6 +664,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LivesTextField: {fileID: 270741556}
+--- !u!1 &299459829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1868906909597631413, guid: 2d2fa1543d1de51419f56c509d455473,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868906909643535680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &299459832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299459829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bdd2fe82d482b4a9b16cdd2fc24330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &299459833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299459829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f300aee3ccd213e46a874fec5f6cde08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: a7cb296a-eca3-465a-a101-ef76e88cd690
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
