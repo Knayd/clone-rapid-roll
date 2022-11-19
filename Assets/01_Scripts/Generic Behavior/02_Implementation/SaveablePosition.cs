@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveablePosition : MonoBehaviour, ISaveable
@@ -8,23 +6,30 @@ public class SaveablePosition : MonoBehaviour, ISaveable
     public object CaptureState()
     {
         var position = transform.position;
-        return new Position
+        return new SaveData
         {
             x = position.x,
-            y = position.y
+            y = position.y,
+            active = gameObject.activeInHierarchy
         };
     }
 
     public void RestoreState(object state)
     {
-        var position = (Position)state;
-        transform.position = new Vector3(position.x, position.y);
+        var saveData = (SaveData)state;
+        var isActive = saveData.active;
+        gameObject.SetActive(isActive);
+        if (isActive)
+        {
+            transform.position = new Vector3(saveData.x, saveData.y);
+        }
     }
 
     [Serializable]
-    private struct Position
+    private struct SaveData
     {
         public float x;
         public float y;
+        public bool active;
     }
 }
