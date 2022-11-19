@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -48,7 +47,7 @@ public class SaveSystem : MonoBehaviour
 
     private void CaptureState(Dictionary<string, object> state)
     {
-        foreach (var saveable in FindObjectsOfType<Saveable>())
+        foreach (var saveable in SceneUtil.GetAllObjectsInScene<Saveable>())
         {
             state[saveable.Id] = saveable.CaptureState();
         }
@@ -56,7 +55,7 @@ public class SaveSystem : MonoBehaviour
 
     private void RestoreState(Dictionary<string, object> state)
     {
-        foreach (var saveable in FindObjectsOfType<Saveable>())
+        foreach (var saveable in SceneUtil.GetAllObjectsInScene<Saveable>())
         {
             if (state.TryGetValue(saveable.Id, out object value))
             {
