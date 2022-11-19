@@ -19,7 +19,7 @@ public class SaveSystem : MonoBehaviour
     private void Load()
     {
         var state = LoadFile();
-        RestoreState(state);
+        RestoreState(state); 
     }
 
     private Dictionary<string, object> LoadFile()
