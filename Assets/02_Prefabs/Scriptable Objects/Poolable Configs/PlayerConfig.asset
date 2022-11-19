@@ -15,3 +15,5 @@ MonoBehaviour:
   objectToPool: {fileID: 4616323395967083776, guid: 369556e8cd70104eb837b02f16f5f7b7,
     type: 3}
   amountToPool: 1
+  ids:
+  - 8930be33-53a6-4351-b6bf-0346d4ee9690

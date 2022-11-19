@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -21,6 +20,12 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject newObject = Instantiate(config.GetObjectToPool());
                 newObject.SetActive(false);
+                var saveable = newObject.GetComponent<Saveable>();
+                if (saveable != null && config.GetIds().Count > 0)
+                {
+                    saveable.SetId(config.GetIds()[i]);
+                }
+
                 pooledObjects.Add(newObject);
             }
         }

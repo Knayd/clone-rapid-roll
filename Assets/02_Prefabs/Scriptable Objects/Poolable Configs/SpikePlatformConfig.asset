@@ -15,3 +15,14 @@ MonoBehaviour:
   objectToPool: {fileID: 8862682600339263598, guid: 3b6a7f1dc7e70630e86fad998e7bf026,
     type: 3}
   amountToPool: 10
+  ids:
+  - b40d7dc3-41aa-498b-abc8-e2958c1b857a
+  - c3f8396d-2f57-41eb-bcc6-1e6cf3c3733b
+  - 6193cf93-1097-45a6-8483-69f4b4023f9c
+  - ea487db6-d735-4aea-8351-43f74f876072
+  - 485fd89e-3605-4ce7-90b9-8abda3731565
+  - bb5c7902-9572-47d4-9e8f-fd99f1c32b8f
+  - f5a85c42-9e1a-4f1a-bb64-d22c1bbb3746
+  - 67c90e19-7199-4df4-87a8-eef8371609ed
+  - 2459fbac-eece-439b-aec6-45c0cdf83e0f
+  - 993f992d-7296-4f44-9a20-fd3a7da9fdfd
