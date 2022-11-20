@@ -20,7 +20,7 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject newObject = Instantiate(config.GetObjectToPool());
                 newObject.SetActive(false);
-                var saveable = newObject.GetComponent<Saveable>();
+                var saveable = newObject.GetComponent<PoolableSaveable>();
                 if (saveable != null && config.GetIds().Count > 0)
                 {
                     saveable.SetId(config.GetIds()[i]);
@@ -33,8 +33,6 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetPooledObject(string tag)
     {
-        return pooledObjects.Find(pooledObject =>
-                                    !pooledObject.activeInHierarchy &&
-                                    pooledObject.CompareTag(tag));
+        return pooledObjects.Find(pooledObject => !pooledObject.activeInHierarchy && pooledObject.CompareTag(tag));
     }
 }

@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Saveable : MonoBehaviour
+public abstract class BaseSaveable : MonoBehaviour
 {
-    [SerializeField] private string id = string.Empty;
 
-    public string Id => id;
-
-    [ContextMenu("Generate Id")]
-    private void GenerateId() => id = Guid.NewGuid().ToString();
-
-    public void SetId(string id) => this.id = id;
+    public abstract string Id { get; }
 
     public object CaptureState()
     {

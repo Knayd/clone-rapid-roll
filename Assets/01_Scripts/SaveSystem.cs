@@ -47,7 +47,7 @@ public class SaveSystem : MonoBehaviour
 
     private void CaptureState(Dictionary<string, object> state)
     {
-        foreach (var saveable in SceneUtil.GetAllObjectsInScene<Saveable>())
+        foreach (var saveable in SceneUtil.GetAllObjectsInScene<BaseSaveable>())
         {
             state[saveable.Id] = saveable.CaptureState();
         }
@@ -55,7 +55,7 @@ public class SaveSystem : MonoBehaviour
 
     private void RestoreState(Dictionary<string, object> state)
     {
-        foreach (var saveable in SceneUtil.GetAllObjectsInScene<Saveable>())
+        foreach (var saveable in SceneUtil.GetAllObjectsInScene<BaseSaveable>())
         {
             if (state.TryGetValue(saveable.Id, out object value))
             {
