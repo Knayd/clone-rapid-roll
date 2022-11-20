@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1868906909597631415}
   - component: {fileID: 1868906909597631414}
+  - component: {fileID: 299459832}
+  - component: {fileID: 299459830}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -43,5 +45,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb0a98f7ee2f3b47a2d58088746d321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpawner: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
+  levelScoreCanvas: {fileID: 0}
+  gameStartCanvas: {fileID: 0}
   score: 0
   lives: 3
+--- !u!114 &299459832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868906909597631413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bdd2fe82d482b4a9b16cdd2fc24330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &299459830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868906909597631413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d529da817202d114d8c5e6f3897a0018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8e1dc4d8-3cc8-4700-b07d-0649e0a897ab

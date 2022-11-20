@@ -47,6 +47,4 @@ MonoBehaviour:
   levelCanvas: {fileID: 0}
   highScoreCanvas: {fileID: 0}
   pauseMenuCanvas: {fileID: 0}
-  GameOverCanvas: {fileID: 0}
-  LevelScoreCanvas: {fileID: 0}
   getLocalSceneIndex: 0

@@ -664,37 +664,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LivesTextField: {fileID: 270741556}
---- !u!1 &299459829 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1868906909597631413, guid: 2d2fa1543d1de51419f56c509d455473,
-    type: 3}
-  m_PrefabInstance: {fileID: 1868906909643535680}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &299459832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299459829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bdd2fe82d482b4a9b16cdd2fc24330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &299459833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299459829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f300aee3ccd213e46a874fec5f6cde08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: bc9f9458-c691-4da9-a0d7-65e7965a9b59
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,16 +1315,6 @@ PrefabInstance:
       propertyPath: pauseMenuCanvas
       value: 
       objectReference: {fileID: 1414814883}
-    - target: {fileID: 2906825434423784155, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
-        type: 3}
-      propertyPath: GameOverCanvas
-      value: 
-      objectReference: {fileID: 723475254}
-    - target: {fileID: 2906825434423784155, guid: adf8a0c5d63eeda46a1afa3daba82cf6,
-        type: 3}
-      propertyPath: LevelScoreCanvas
-      value: 
-      objectReference: {fileID: 1215486104}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf8a0c5d63eeda46a1afa3daba82cf6, type: 3}
 --- !u!1 &723475254
@@ -5067,19 +5026,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
         type: 3}
-      propertyPath: lives
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
-        type: 3}
-      propertyPath: GameOverCanvas
+      propertyPath: playerSpawner
       value: 
-      objectReference: {fileID: 723475254}
-    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
-        type: 3}
-      propertyPath: LevelScoreCanvas
-      value: 
-      objectReference: {fileID: 1215486104}
+      objectReference: {fileID: 801770966}
     - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
         type: 3}
       propertyPath: gameOverCanvas
@@ -5095,11 +5044,6 @@ PrefabInstance:
       propertyPath: gameStartCanvas
       value: 
       objectReference: {fileID: 558471126}
-    - target: {fileID: 1868906909597631414, guid: 2d2fa1543d1de51419f56c509d455473,
-        type: 3}
-      propertyPath: playerSpawner
-      value: 
-      objectReference: {fileID: 801770966}
     - target: {fileID: 1868906909597631415, guid: 2d2fa1543d1de51419f56c509d455473,
         type: 3}
       propertyPath: m_LocalPosition.x
