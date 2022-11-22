@@ -12,18 +12,28 @@ public class SceneLoader : MonoBehaviour
     
 
     public int getLocalSceneIndex;
-    
+    private bool isPaused;
 
     void Start()
     {
       
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
+        
     }
 
 
     private void Update()
     {
         EnterPauseMenu();
+        if (isPaused == false)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
     }
 
 
@@ -82,14 +92,19 @@ public class SceneLoader : MonoBehaviour
         {
 
             pauseMenuCanvas.SetActive(true);
+            isPaused = true;
+            
             
         }
+       
         
     }
 
     public void QuitPauseMenu()
     {
         pauseMenuCanvas.SetActive(false);
+        isPaused = false;
+       
     }
 
     public void QuitGame()
