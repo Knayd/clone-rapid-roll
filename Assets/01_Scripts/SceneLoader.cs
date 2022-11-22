@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class SceneLoader : MonoBehaviour
 {
 
@@ -13,12 +15,13 @@ public class SceneLoader : MonoBehaviour
 
     public int getLocalSceneIndex;
     private bool isPaused;
+   
 
     void Start()
     {
       
         getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
+       
         
     }
 
@@ -57,13 +60,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     // @ Main Menu ---------------------------------
-
-    public void ActivateLevelSelect()
-    {
-        
-        mainMenuCanvas.SetActive(false);
-        levelCanvas.SetActive(true);
-    }
+    
 
     public void ActivateHightscores()
     {
