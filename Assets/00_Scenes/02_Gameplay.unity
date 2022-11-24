@@ -4476,7 +4476,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 881152602}
-        m_MethodName: LoadPreviousScene
+        m_MethodName: GameOverBackMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

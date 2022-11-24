@@ -145,4 +145,15 @@ public class SceneLoader : MonoBehaviour
         Application.Quit();
     }
 
+    // @ GameOver Menu ---------------------------------
+
+    public void GameOverBackMenu()
+    {
+      
+        SaveSystem.DeleteSaveFile();
+        GameStatusTracker.Continue = false;
+        LoadPreviousScene();
+
+    }
+
 }
