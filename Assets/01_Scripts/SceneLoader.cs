@@ -79,7 +79,7 @@ public class SceneLoader : MonoBehaviour
     {
         LoadNextScene();
         
-        //SaveSystem.Load();
+        
         GameStatusTracker.Continue = true;
     }
 
@@ -87,7 +87,7 @@ public class SceneLoader : MonoBehaviour
     {
         GameStatusTracker.Continue = false;
         LoadNextScene();
-        //SaveSystem.DeleteSaveFile();
+       
         
     }
 
@@ -100,10 +100,11 @@ public class SceneLoader : MonoBehaviour
 
     public void BackButton()
     {
+        
         if (mainMenuCanvas.gameObject.activeInHierarchy == false)
         {
 
-            levelCanvas.SetActive(false);
+            
             highScoreCanvas.SetActive(false);
             mainMenuCanvas.SetActive(true);
         }
