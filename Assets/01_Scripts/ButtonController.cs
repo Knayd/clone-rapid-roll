@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    Button button;
+    Button continueButton;
 
     void Start()
     {
-        button = GetComponent<Button>();
-        button.interactable = false;
+        continueButton = GetComponent<Button>();
+        continueButton.interactable = SaveSystem.SaveFileExists();
     }
 
     void Update()

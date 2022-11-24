@@ -11,23 +11,37 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] GameObject levelCanvas;
     [SerializeField] GameObject highScoreCanvas;
     [SerializeField] GameObject pauseMenuCanvas;
+
     
 
     public int getLocalSceneIndex;
     private bool isPaused;
-   
 
+    private void Awake()
+    {
+       
+    }
     void Start()
     {
-      
-        getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
-       
         
+        getLocalSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+       
+            if (GameStatusTracker.Continue)
+            {
+                SaveSystem.Load();
+            } 
+        
+
+        
+
     }
 
 
     private void Update()
     {
+      
+
         EnterPauseMenu();
         if (isPaused == false)
         {
@@ -61,6 +75,21 @@ public class SceneLoader : MonoBehaviour
 
     // @ Main Menu ---------------------------------
     
+    public void Continue()
+    {
+        LoadNextScene();
+        
+        //SaveSystem.Load();
+        GameStatusTracker.Continue = true;
+    }
+
+    public void NewGame()
+    {
+        GameStatusTracker.Continue = false;
+        LoadNextScene();
+        //SaveSystem.DeleteSaveFile();
+        
+    }
 
     public void ActivateHightscores()
     {
@@ -82,6 +111,12 @@ public class SceneLoader : MonoBehaviour
 
 
     // @ Pause Menu ------------------------------------------
+
+    public void BackMainMenu()
+    {
+        SaveSystem.Save();
+
+    }
 
     public void EnterPauseMenu()
     {

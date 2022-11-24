@@ -23,11 +23,25 @@ public class LevelManager : MonoBehaviour, ISaveable
     public int GetLives() { return lives; }
     public void IncreaseLives() { lives += 1; }
 
+    //-------
+
+
     public void DecreaseLives()
     {
         lives -= 1;
         StartCoroutine(GameIsOver());
     }
+
+    //-------
+    void Awake()
+    {
+        if (GameStatusTracker.Continue == true)
+        {
+            gameStartCanvas.SetActive(false);
+        }
+    }
+
+
 
     //-------
 

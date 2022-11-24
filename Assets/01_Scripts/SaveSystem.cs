@@ -3,12 +3,12 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveSystem : MonoBehaviour
+public class SaveSystem : MonoBehaviour 
 {
-    private string SavePath => $"{Application.persistentDataPath}/save.txt";
+    private static string SavePath => $"{Application.persistentDataPath}/save.txt";
 
     [ContextMenu("Save")]
-    private void Save()
+    public static void Save()
     {
         var state = LoadFile();
         CaptureState(state);
@@ -16,13 +16,24 @@ public class SaveSystem : MonoBehaviour
     }
 
     [ContextMenu("Load")]
-    private void Load()
+    public static void Load()
     {
         var state = LoadFile();
-        RestoreState(state); 
+        RestoreState(state);
     }
 
-    private Dictionary<string, object> LoadFile()
+    public static void DeleteSaveFile()
+    {
+        if (File.Exists(SavePath))
+
+        {
+
+            File.Delete(SavePath);
+
+        }
+    }
+
+    private static Dictionary<string, object> LoadFile()
     {
         if (!File.Exists(SavePath))
         {
@@ -36,7 +47,8 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    private void SaveFile(object state)
+
+    private static void SaveFile(object state)
     {
         using (var stream = File.Open(SavePath, FileMode.Create))
         {
@@ -45,7 +57,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    private void CaptureState(Dictionary<string, object> state)
+    private static void CaptureState(Dictionary<string, object> state)
     {
         foreach (var saveable in SceneUtil.GetAllObjectsInScene<BaseSaveable>())
         {
@@ -53,7 +65,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    private void RestoreState(Dictionary<string, object> state)
+    private static void RestoreState(Dictionary<string, object> state)
     {
         foreach (var saveable in SceneUtil.GetAllObjectsInScene<BaseSaveable>())
         {
@@ -63,4 +75,7 @@ public class SaveSystem : MonoBehaviour
             }
         }
     }
+
+    public static bool SaveFileExists() => File.Exists(SavePath);
+
 }
